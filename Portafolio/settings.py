@@ -17,7 +17,7 @@ SECRET_KEY = env('SECRET_KEY', default='django-insecure-change-me')
 
 DEBUG = env.bool('DEBUG', default=True)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['onrender.com']
 
 
 EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'Portafolio',
     'porfolio.apps.PorfolioConfig',
     'tailwind', 
+    'cloudinary',
+    'cloudinary_storage',
     
     #'theme',
 ]
@@ -148,3 +150,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 CORS_ALLOW_CREDENTIALS = True
+
+#configuracion oara utilizar cloudinary
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': env('CLOUD_NAME'),
+    'API_KEY': env('API_KEY'),
+    'API_SECRET': env('API_SECRET'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
