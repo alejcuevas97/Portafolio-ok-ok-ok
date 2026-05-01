@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-100">
+  <!-- Navigation -->
+  <nav class="w-full">
+    {% include 'navbar.html' %}
+    <div class="px-4 sm:px-6 md:px-10 bg-gray-400 text-center"></div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow w-full flex items-center justify-center px-4 sm:px-6 md:px-10">
+    <blockquote class="bg-white shadow-xl rounded-xl max-w-4xl w-full p-6">
+      <article class="flex flex-col justify-center text-center">
+        <div class="space-y-6">
+          <p class="text-justify leading-relaxed text-base sm:text-lg md:text-xl">
+            "Desarrollador Backend con formación en Ingeniería Industrial y más de 10 años de experiencia práctica en sistemas eléctricos y electrónicos. 
+            Especializado en desarrollo backend basado en Python (Django, FastApi), diseño de APIs RESTful y gestión de bases de datos relacionales.
+            Combina un profundo conocimiento técnico a nivel de hardware con habilidades en desarrollo de software, lo que permite crear soluciones
+            efectivas en la intersección de sistemas industriales y automatización backend.
+            Certificado en desarrollo asistido por IA. Disponible para trabajos freelance y contratos remotos."
+          </p>
+          <footer class="flex justify-center items-center space-x-2">
+            <span class="font-bold text-lg">Alejandro_CG!</span>
+          </footer>
+        </div>
+      </article>
+    </blockquote>
+  </main>
+</body>
+</html>
+{% endblock content %}

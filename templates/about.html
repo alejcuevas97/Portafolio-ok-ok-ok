@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<head>
+  <!-- Tailwind CSS CDN with Dark Mode Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Configure Tailwind to use class-based dark mode
+    tailwind.config = {
+      darkMode: 'class', // Enable class-based dark mode
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <!-- Optional: Include Font Awesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+  <div class="min-h-screen flex flex-col">
+    <!-- Header Section -->
+<!-- Navigation -->
+        <nav>
+        {% include 'navbar.html' %}
+<div class="bg-gray-100">
+        <div class="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
+            <div class="col-span-4 sm:col-span-3">
+                <div class="bg-white shadow rounded-lg p-6">
+                    <div class="flex flex-col items-center">
+                        <img src="{%static 'images/2.png'%}" class="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0">
+
+                        <h1 class="text-xl font-bold">Alejandro Cuevas González</h1>
+                        <p class="text-gray-700">Ingeniero Industrial, Técnico Reparador de Equipos Eléctricos y Electrónicos, Programador  Backend Freelance</p>
+                        <div class="mt-6 flex flex-wrap gap-4 justify-center">
+                            
+                            <a href="{%url 'resume'%}" class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded">Resume</a>
+                        </div>
+                    </div>
+                    <hr class="my-6 border-t border-gray-300">
+                    <div class="flex flex-col">
+                        <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">FORMACIÓN ACADÉMICA</span>
+                        <ul>
+                            <li class="mb-2">• Ingeniería Industrial - Universidad Central "Marta Abreu" de las Villas/ Universidad José Martí Pérez, Sancti Spíritus.
+                            <li class="mb-2">• Certificación en Desarrollo Asistido por IA Plataforma: Brais Moure, año 2026   
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-4 sm:col-span-9">
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h2 class="text-xl font-bold mb-4">🔧 HABILIDADES TÉCNICAS</h2>
+                    <p class="text-gray-700">
+                            <li class="mb-2">	Lenguajes de programación: Python</li>
+                            <li class="mb-2">	Frameworks: Django, FastAPI</li>
+                            <li class="mb-2">	Base de Datos: PostgreSQL, MySQL</li>
+                            <li class="mb-2">	Herramientas y 
+                                                Plataformas   : Git, GitHub,APIs REST </li>
+                            <li class="mb-2">	Conocimiento del Dominio : Sistemas Elétricos, Reparación y Diagnóstico Eletrónico, Automatización Industrial </li>
+                            <li class="mb-2">	Certificaciones: Desarrollo Asistido por IA (Brais Moure - 2026)</li>
+                            <li class="mb-2">	Desarrollo web: Backend, APIs REST, integración de servicios</li>
+                            <li class="mb-2">	Ingeniería industrial: análisis de procesos, mejora continua, gestión de proyectos</li>
+                  
+                    </p>
+
+
+                    <h2 class="text-xl font-bold mt-6 mb-4">EXPERIENCIA</h2>
+                    <div class="mb-6">
+                        <div class="flex justify-between flex-wrap gap-2 w-full">
+                            <span class="text-gray-700 font-bold"> Desarrollador Backend - Freelance  2025-Presente</span>
+                        </div>
+                        <p class="mt-2">
+                            <li class="mb-2"> Diseñó y desplegó APIs RESTful usando Django para clientes de sector Privado.
+                            <li class="mb-2"> Gestionó bases de datos relacionales (PostgreSQL, MySQL) incluyendo diseño de esquemas y optimización de consultas.
+                            <li class="mb-2"> Automatizó flujos de procesamiento de datos y generación de reportes, reduciendo trabajo manual.
+                            
+                        </p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex justify-between flex-wrap gap-2 w-full">
+                            <span class="text-gray-700 font-bold">Técnico en Eletricidad y Electrónica - Privado 2015-Presente </span>
+                            </div>
+                        <p class="mt-2">
+                            <li class="mb-2"> Diagnosticó y reparó equipos eléctricos y electrónicos para clientes residenciales e industriales durante más de 10 años.
+                            <li class="mb-2"> Especializado en equipos: TV LCD,TRC; Teléfonos; Convertidores de Energía; Computadoras; etc... "
+                            <li class="mb-2"> Desarrolló protocolos de diagnóstico sistemáticos que redujeron el tiempo promedio de reparación.
+                            </p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex justify-between flex-wrap gap-2 w-full">
+                            <p>
+                            
+                            </p> 
+                        </div>
+                        <p class="mt-2">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
