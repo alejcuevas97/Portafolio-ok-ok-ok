@@ -17,7 +17,7 @@ SECRET_KEY = env('SECRET_KEY', default='django-insecure-change-me')
 
 DEBUG = env.bool('DEBUG', default=True)
 
-ALLOWED_HOSTS = ['onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
