@@ -48,3 +48,10 @@ def Proyectos(request):
         'proyectos': proyectos,
     }
     return render(request, 'proyectos.html', context)
+
+#utilizado para la subida de img 
+import cloudinary.uploader
+
+def upload_image(file):
+    result = cloudinary.uploader.upload(file)
+    return result['secure_url']

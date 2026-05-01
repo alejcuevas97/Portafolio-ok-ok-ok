@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import URLValidator
 from django.utils.translation import gettext_lazy as _
-
+from cloudinary.models import CloudinaryField
 
 # === Principio S (Single Responsibility) ===
 # Validadores separados
@@ -39,11 +39,8 @@ class Project(models.Model):
         verbose_name=_('Descripción'),
         help_text=_('Descripción detallada del proyecto')
     )
-    image = models.ImageField(
-        upload_to='Proyecto',
-        verbose_name=_('Imagen'),
-        help_text=_('Imagen de portada del proyecto')
-    )
+    
+    
     link = models.URLField(
         max_length=150,
         verbose_name=_('Enlace'),
@@ -83,3 +80,6 @@ class Project(models.Model):
         ProjectValidator.validate_title(self.title)
         ProjectValidator.validate_link(self.link)
         super().save(*args, **kwargs)
+class Foto(models.Model):
+    imagen = CloudinaryField('image')
+    descripcion = models.TextField()
