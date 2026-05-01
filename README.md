@@ -3,7 +3,7 @@
 Portafolio personal desarrollado con Django para mostrar habilidades, experiencia y proyectos como Ingeniero Industrial y Desarrollador Backend. Incluye secciones de información personal, habilidades técnicas, currículum y contacto. Cuenta con una arquitectura basada en los principios SOLID para mayor mantenibilidad.
 
 ## Enlace de Portfolio
-https://portafolio-propio-1.onrender.com
+https://portafolio-ok-ok-ok.onrender.com
 
 
 ## 🚀 Tecnologías Utilizadas
