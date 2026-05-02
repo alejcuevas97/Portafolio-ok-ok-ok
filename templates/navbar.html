@@ -53,9 +53,7 @@
         }
     </style>
 </head>
-
     <!-- Premium Professional Navigation Bar -->
-<body>     
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
@@ -137,6 +135,12 @@
                     <i class="fas fa-envelope text-gray-700 mr-3 w-5 text-center"></i>
                     {% if request.LANGUAGE_CODE == 'es' %}Contacto{% else %}Contact{% endif %}
                 </a>
+                <!-- Language Switcher for Mobile -->
+                <div class="px-4 py-3">
+                    <div class="flex space-x-2">
+                        <a href="{% url 'set_language' 'es' %}?next={{ request.path }}" class="px-3 py-1 rounded-full text-sm font-semibold {% if request.LANGUAGE_CODE == 'es' %}bg-blue-600 text-white{% else %}bg-gray-100 text-gray-700{% endif %}">ES</a>
+                        <a href="{% url 'set_language' 'en' %}?next={{ request.path }}" class="px-3 py-1 rounded-full text-sm font-semibold {% if request.LANGUAGE_CODE == 'en' %}bg-blue-600 text-white{% else %}bg-gray-100 text-gray-700{% endif %}">EN</a>
+                    </div>
                 </div>
             </div>
         </div>

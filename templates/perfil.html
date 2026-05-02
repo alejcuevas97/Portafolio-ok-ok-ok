@@ -6,42 +6,36 @@
     
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}">
-<body>
+<body class="relative min-h-screen flex flex-col">
     <!-- Hero Section -->
-    <section id="home" class="flex-1 flex flex-col-reverse md:flex-row items-center justify-between px-9 sm:px-10 md:px-12 py-12 bg-gray-200 "   >
-      <div class="md:w-1/2 ">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold dark:text-black text-black mb-4">{% if request.LANGUAGE_CODE == 'es' %}Hola, soy Alejandro Cuevas González{% else %}Hello, I'm Alejandro Cuevas González{% endif %}</h1>
-        <p class="text-lg sm:text-xl md:text-2xl font-medium dark:text-black text-gray-600">
+    <section id="home" 
+      class="flex-1 flex flex-col-reverse md:flex-row items-center justify-between 
+             px-9 sm:px-10 md:px-12 py-12 bg-gray-200 
+             h-screen md:h-auto">
+      
+      <div class="md:w-1/2">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">
+          {% if request.LANGUAGE_CODE == 'es' %}Hola, soy Alejandro Cuevas González{% else %}Hello, I'm Alejandro Cuevas González{% endif %}
+        </h1>
+        <p class="text-lg sm:text-xl md:text-2xl font-medium text-gray-600">
           {% if request.LANGUAGE_CODE == 'es' %}Ingeniero Industrial, técnico en reparación de equipos eléctricos y electrónicos, desarrollador Backend freelance.{% else %}Industrial Engineer, Electrical and Electronic Equipment Repair Technician, Freelance Backend Programmer.{% endif %}
         </p> 
       </div>
-      <div class="md:w-1/2 flex justify-center mb-10 ">
-        <img src="{%static 'images/2.png' %}" alt="Profile Picture" class="w-64 h-64 sm:w-80 sm:h-80 rounded-full" width="32" height="32">
       
+      <div class="md:w-1/2 flex justify-center mb-10">
+        <img src="{%static 'images/2.png' %}" alt="Profile Picture" 
+             class="w-64 h-64 sm:w-80 sm:h-80 rounded-full" width="32" height="32">
+      </div>
     </section>
 
-    <!-- About Me Section -->
-    
-
-    <!-- Services Section -->
-    
-
-    <!-- Featured Projects Section -->
-    
-
-    <!-- Contact Section -->
-   
-
     <!-- Footer -->
-    <footer class="px-6 sm:px-10 md:px-16 py-5  text-center">
-      <p class=" dark:text-black text-black ">
+    <footer class="px-6 sm:px-10 md:px-16 py-5 text-center mt-auto">
+      <p class="text-black">
         © 2025 Alejandro Cuevas González | {% if request.LANGUAGE_CODE == 'es' %}Desarrollador Backend{% else %}Backend Developer{% endif %} | Designed by @alejcuevas97
       </p>
     </footer>
-  
-
-  
 </body>
+
 </html>
 
 
