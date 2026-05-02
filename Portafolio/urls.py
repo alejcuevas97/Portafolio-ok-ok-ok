@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import HomeViews, AboutView, PerfilView, ResumeView, ContactView, HomeView
+from .views import HomeViews, AboutView, PerfilView, ResumeView, ContactView, HomeView, set_language
 from porfolio.views import ProjectListView, Proyectos  # Proyectos deprecated
 
 
@@ -16,6 +16,7 @@ urlpatterns = [
     path('perfil/', PerfilView.as_view(), name="profile"),
     path('resume/', ResumeView.as_view(), name="resume"),
     path('contact/', ContactView.as_view(), name="contact"),
+    path('set-language/<str:language_code>/', set_language, name='set_language'),
     
     # MEJORADO: Usar ProjectListView en lugar de función Proyectos
     path('proyectos/', ProjectListView.as_view(), name='projects'),

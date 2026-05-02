@@ -1,5 +1,7 @@
+from django.conf import settings
+from django.utils import translation
 from django.views.generic import TemplateView
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 # === Principio O (Open/Closed) ===
@@ -55,3 +57,15 @@ class ContactView(BasePageView):
 class HomeViews(HomeView):
     """DEPRECADA - usa HomeView en su lugar"""
     pass      
+
+
+def set_language(request, language_code):
+    """Cambia el idioma activo y redirige a la página anterior."""
+    supported_languages = dict(settings.LANGUAGES)
+    if language_code not in supported_languages:
+        language_code = settings.LANGUAGE_CODE
+
+    response = redirect(request.GET.get('next') or request.META.get('HTTP_REFERER') or '/')
+    response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language_code)
+    translation.activate(language_code)
+    return response

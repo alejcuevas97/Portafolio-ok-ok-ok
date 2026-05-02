@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n %}
 {% block content %}
 
   <!-- Tailwind CSS CDN -->
@@ -18,12 +18,21 @@
       <article class="flex flex-col justify-center text-center">
         <div class="space-y-6">
           <p class="text-justify leading-relaxed text-base sm:text-lg md:text-xl">
+          {% if request.LANGUAGE_CODE == 'es' %}
+          Desarrollador Backend con título en Ingeniería Industrial y más de 10 años de experiencia práctica en sistemas eléctricos y electrónicos.
+          Especializado en desarrollo backend con Python (Django, FastAPI), diseño de APIs RESTful y gestión de bases de datos relacionales.
+          Combina conocimientos técnicos profundos de hardware con habilidades de desarrollo de software, permitiendo la creación de soluciones eficaces en la intersección de sistemas industriales y automatización backend.
+          Ha recibido reconocimientos en GitHub: YOLO y Pull Shark.
+          Certificado en desarrollo asistido por IA.
+          Disponible para trabajo freelance y remoto.
+          {% else %}
           Backend Developer with a degree in Industrial Engineering and over 10 years of hands-on experience in electrical and electronic systems.
           Specialized in Python-based backend development (Django, FastApi), RESTful API design, and relational database management.
           Combines in-depth technical hardware knowledge with software development skills, enabling the creation of effective solutions at the intersection of industrial systems and backend automation.
-          Has received GitHub awards: YOLO and Drag Shark.
+          Has received GitHub awards: YOLO and Pull Shark.
           Certified in AI-assisted development.
           Available for freelance and remote work.
+          {% endif %}
           </p>
           <footer class="flex justify-center items-center space-x-2">
             <span class="font-bold text-lg">Alejandro_CG!</span>

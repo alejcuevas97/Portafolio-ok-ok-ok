@@ -1,8 +1,9 @@
-{% load static tailwind_tags %}
+{% load static tailwind_tags i18n %}
 
 <link href="./output.css" rel="stylesheet">
 
-<html lang="en">
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     {% tailwind_css %}
     <meta charset="UTF-8">

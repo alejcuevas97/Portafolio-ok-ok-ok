@@ -73,25 +73,30 @@
                     <div class="dropdown relative">
                         <a href="{% url 'profile' %}" class="nav-link text-gray-700 hover:text-blue-600 px-4 py-2 flex items-center rounded-lg hover:bg-blue-50 transition-colors duration-200">
                             <i class="fas fa-user-circle mr-2"></i>
-                            Profile
+                            {% if request.LANGUAGE_CODE == 'es' %}Perfil{% else %}Profile{% endif %}
                         </a>    
                     </div>
                         <a href="{% url 'about' %}" class="nav-link text-gray-700 hover:text-blue-600 px-4 py-2 flex items-center rounded-lg hover:bg-blue-50 transition-colors duration-200">
                         <i class="fas fa-briefcase mr-2"></i>
-                        About
+                        {% if request.LANGUAGE_CODE == 'es' %}Acerca{% else %}About{% endif %}
                     </a>
                     <a href="{% url 'projects' %}" class="nav-link text-gray-700 hover:text-blue-600 px-4 py-2 flex items-center rounded-lg hover:bg-blue-50 transition-colors duration-200">
                         <i class="fas fa-file-alt mr-2"></i>
-                        Projects
+                        {% if request.LANGUAGE_CODE == 'es' %}Proyectos{% else %}Projects{% endif %}
                     </a>
                     <a href="{% url 'contact' %}" class="nav-link text-gray-700 hover:text-blue-600 px-4 py-2 flex items-center rounded-lg hover:bg-blue-50 transition-colors duration-200">
                         <i class="fas fa-envelope  mr-2"></i>
-                        Contact
+                        {% if request.LANGUAGE_CODE == 'es' %}Contacto{% else %}Contact{% endif %}
                     </a>
                 </div>
 
                 <!-- Right Section - Actions -->
                 <div class="flex items-center space-x-3">
+                    <div class="hidden md:block h-6 w-px bg-gray-200"></div>
+                    <div class="hidden md:flex items-center space-x-2">
+                        <a href="{% url 'set_language' 'es' %}?next={{ request.path }}" class="px-3 py-1 rounded-full text-sm font-semibold {% if request.LANGUAGE_CODE == 'es' %}bg-blue-600 text-white{% else %}bg-gray-100 text-gray-700{% endif %}">ES</a>
+                        <a href="{% url 'set_language' 'en' %}?next={{ request.path }}" class="px-3 py-1 rounded-full text-sm font-semibold {% if request.LANGUAGE_CODE == 'en' %}bg-blue-600 text-white{% else %}bg-gray-100 text-gray-700{% endif %}">EN</a>
+                    </div>
                     <div class="hidden md:block h-6 w-px bg-gray-200"></div>
                     <div class="dropdown relative flex items-center space-x-2 focus:outline-none group">
                         <div class="relative">
@@ -117,19 +122,19 @@
             <div class="px-2 pt-2 pb-4 space-y-1">
                 <a href="{%url 'profile'%}" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 flex items-center transition-colors duration-200">
                     <i class="fas fa-user-circle text-gray-700 mr-3 w-5 text-center"></i>
-                    Profile
+                    {% if request.LANGUAGE_CODE == 'es' %}Perfil{% else %}Profile{% endif %}
                 </a>
                 <a href="{%url 'about'%}" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 flex items-center transition-colors duration-200">
                     <i class="fas fa-briefcase text-gray-700 mr-3 w-5 text-center"></i>
-                    About
+                    {% if request.LANGUAGE_CODE == 'es' %}Acerca{% else %}About{% endif %}
                 </a>
                 <a href="{% url 'projects' %}" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 flex items-center transition-colors duration-200">
                     <i class="fas fa-file-alt text-gray-700 mr-3 w-5 text-center"></i>
-                    Proyect
+                    {% if request.LANGUAGE_CODE == 'es' %}Proyectos{% else %}Projects{% endif %}
                 </a>
                 <a href="{%url 'contact'%}" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 flex items-center transition-colors duration-200">
                     <i class="fas fa-envelope text-gray-700 mr-3 w-5 text-center"></i>
-                    Contact
+                    {% if request.LANGUAGE_CODE == 'es' %}Contacto{% else %}Contact{% endif %}
                 </a>
                 </div>
             </div>

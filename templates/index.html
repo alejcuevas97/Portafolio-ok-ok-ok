@@ -32,8 +32,8 @@
   </div>
   
   <div class="relative z-10 flex flex-col items-center justify-center h-full text-center">
-    <h1 class="mb-4 text-5xl font-bold leading-tight">Bienvenido a mi Portafolio</h1>
-    <a href="{%url 'profile'%}" class="px-6 py-2 text-lg font-semibold text-gray-900 transition duration-300 ease-in-out transform bg-yellow-400 rounded-full hover:bg-yellow-300 hover:scale-105 hover:shadow-lg">Iniciar</a>
+    <h1 class="mb-4 text-5xl font-bold leading-tight">{% if request.LANGUAGE_CODE == 'es' %}Bienvenido a mi Portafolio{% else %}Welcome to my Portfolio{% endif %}</h1>
+    <a href="{%url 'profile'%}" class="px-6 py-2 text-lg font-semibold text-gray-900 transition duration-300 ease-in-out transform bg-yellow-400 rounded-full hover:bg-yellow-300 hover:scale-105 hover:shadow-lg">{% if request.LANGUAGE_CODE == 'es' %}Iniciar{% else %}Start{% endif %}</a>
   </div>
 </div>
 

@@ -42,7 +42,7 @@
         d="M21.4286 0C15.5134 0 10.7143 4.74792 10.7143 10.6C10.7143 16.4521 15.5134 21.2 21.4286 21.2C27.3437 21.2 32.1429 16.4521 32.1429 10.6C32.1429 4.74792 27.3437 0 21.4286 0ZM16.0714 24.7333C7.17076 24.7333 0 31.8276 0 40.6333V42.4C0 46.3198 3.1808 49.4667 7.14286 49.4667H28.5714V45.9333H17.8571V31.8H28.5714V24.8299C27.9855 24.7609 27.3856 24.7333 26.7857 24.7333H16.0714ZM32.1429 24.7333V35.3333H21.4286V42.4H32.1429V53H39.2857V42.4H50V35.3333H39.2857V24.7333H32.1429Z"
         fill="#38B7FF"></path>
     </svg>
-    <h2 class="text-gray-400 text-2xl sm:text-[48px]">Contact me</h2>
+    <h2 class="text-gray-400 text-2xl sm:text-[48px]">{% if request.LANGUAGE_CODE == 'es' %}Contáctame{% else %}Contact me{% endif %}</h2>
   </div>
   <div class="z-20 relative px-5 mt-20 md:mt-24 flex flex-wrap gap-7 justify-center lg:max-w-[800px] mx-auto ">
     <div

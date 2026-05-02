@@ -7,20 +7,17 @@
 
     <div class="max-w-7xl mx-auto px-4 py-10 lg:px-8">
         <div class="mb-8 rounded-3xl bg-white p-8 shadow-lg">
-            <h1 class="text-3xl font-bold text-slate-900">Personal projects</h1>
+            <h1 class="text-3xl font-bold text-slate-900">{% if request.LANGUAGE_CODE == 'es' %}Proyectos personales{% else %}Personal projects{% endif %}</h1>
             <p class="mt-3 text-slate-600">
-            This section displays the registered projects with their images stored on Cloudinary.
-            Uploading new projects is only done through the backend (administrative panel).
+            {% if request.LANGUAGE_CODE == 'es' %}Esta sección muestra los proyectos registrados con sus imágenes almacenadas en Cloudinary. La carga de nuevos proyectos solo se realiza desde el panel administrativo.{% else %}This section displays the registered projects with their images stored on Cloudinary. Uploading new projects is only done through the backend (administrative panel).{% endif %}
             </p>
         </div>
 
         <div class="space-y-8">
             <section class="rounded-3xl bg-white p-8 shadow-lg">
-                <h2 class="text-2xl font-semibold text-slate-900">Project List</h2>
+                <h2 class="text-2xl font-semibold text-slate-900">{% if request.LANGUAGE_CODE == 'es' %}Lista de proyectos{% else %}Project List{% endif %}</h2>
                 <p class="mt-2 text-sm text-slate-500">
-                    This public view does not allow you to register new projects, only to view those that have already been saved in the backend.
-                </p>
-
+                    {% if request.LANGUAGE_CODE == 'es' %}Esta vista pública no permite registrar nuevos proyectos, solo ver los que ya han sido guardados en el backend.{% else %}This public view does not allow you to register new projects, only to view those that have already been saved in the backend.{% endif %}
                 {% if proyectos %}
                     <div class="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
                         {% for proyecto in proyectos %}

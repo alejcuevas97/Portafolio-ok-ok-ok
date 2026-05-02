@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n %}
 
 {% block content %}
 
     
-<html lang="en">
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
 
   <!-- Tailwind CSS CDN with Dark Mode Configuration -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -56,9 +57,9 @@
     <!-- Hero Section -->
     <section id="home" class="flex-1 flex flex-col-reverse md:flex-row items-center justify-between px-6 sm:px-10 md:px-16 py-12 bg-gray-200 "   >
       <div class="md:w-1/2">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold dark:text-black text-black mb-4">Hello, I'm Alejandro Cuevas González </h1>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold dark:text-black text-black mb-4">{% if request.LANGUAGE_CODE == 'es' %}Hola, soy Alejandro Cuevas González{% else %}Hello, I'm Alejandro Cuevas González{% endif %}</h1>
         <p class="text-lg sm:text-xl md:text-2xl font-medium dark:text-black text-gray-600">
-          Industrial Engineer, Electrical and Electronic Equipment Repair Technician, Freelance Backend Programmer.
+          {% if request.LANGUAGE_CODE == 'es' %}Ingeniero Industrial, técnico en reparación de equipos eléctricos y electrónicos, desarrollador Backend freelance.{% else %}Industrial Engineer, Electrical and Electronic Equipment Repair Technician, Freelance Backend Programmer.{% endif %}
         </p> 
       </div>
       <div class="md:w-1/2 flex justify-center mb-6 md:mb-0">
@@ -82,7 +83,7 @@
     <!-- Footer -->
     <footer class="px-6 sm:px-10 md:px-16 py-6 bg-gray-400 dark:bg-gray-400 text-center">
       <p class=" dark:text-black text-black ">
-        © 2025 Alejandro Cuevas González | Backend Developer | Designed by @alejcuevas97
+        © 2025 Alejandro Cuevas González | {% if request.LANGUAGE_CODE == 'es' %}Desarrollador Backend{% else %}Backend Developer{% endif %} | Designed by @alejcuevas97
       </p>
     </footer>
   </div>
