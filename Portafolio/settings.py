@@ -130,11 +130,17 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
 LANGUAGE_CODE = 'es'
-
-TIME_ZONE = 'UTC'
-
 USE_I18N = True
+USE_L10N = True
+LANGUAGES = [
+    ('en', 'English'),
+    ('es', 'Español'),
+]
 
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
+TIME_ZONE = 'UTC'
 USE_TZ = True
 
 
