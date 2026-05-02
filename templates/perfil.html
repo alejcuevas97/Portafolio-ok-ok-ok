@@ -26,15 +26,14 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body class=" bg-white text-white font-poppins transition-colors duration-300">
-  <div class="min-h-screen flex flex-col">
+  <div class="min-h-[50vh] flex flex-col">
     <!-- Header Section -->
-    <header class="bg-gray-400 dark:bg-black-800 shadow-md ">
-      <div class="container mx-auto px-6 py-3 flex justify-center  items-center ">
+   
         <!-- Logo -->
         
         
         <!-- Navigation -->
-         {% include 'navbar.html' %}
+         
         <!--<nav>
           <div class="px-6 sm:px-10 md:px-16 py-3 bg-gray-400 dark:bg-gray-400 text-center">
             <a href="{%url 'home'%}" class="px-6 py-2 text-lg font-semibold hover:text-indigo-500 transition text-black dark:text-black">Inicio</a>
@@ -45,7 +44,7 @@
           
           <!-- Mobile Menu Toggle -->
          
-        </nav>
+        
 
         <!-- Dark Mode Toggle -->
        
@@ -81,7 +80,7 @@
    
 
     <!-- Footer -->
-    <footer class="px-6 sm:px-10 md:px-16 py-6 bg-gray-400 dark:bg-gray-400 text-center">
+    <footer class="px-6 sm:px-10 md:px-16 py-9  text-center">
       <p class=" dark:text-black text-black ">
         © 2025 Alejandro Cuevas González | {% if request.LANGUAGE_CODE == 'es' %}Desarrollador Backend{% else %}Backend Developer{% endif %} | Designed by @alejcuevas97
       </p>

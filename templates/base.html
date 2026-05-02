@@ -1,17 +1,15 @@
 {% load static tailwind_tags i18n %}
-
-<link href="./output.css" rel="stylesheet">
-
-{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
-    {% tailwind_css %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-
+    <title>{% block title %}Portfolio{% endblock title %}</title>
+    {% tailwind_css %}
 </head>
-
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock navbar %}
 <body>
 
 {% block content %}

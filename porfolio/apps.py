@@ -2,7 +2,7 @@ from django.apps import AppConfig
 
 
 class PorfolioConfig(AppConfig):
-    defaul_auto_field= 'django.db.models.BigAutoField'
+    default_auto_field = 'django.db.models.BigAutoField'
     name = 'porfolio'
-    verbose_name='Portafolio'
+    verbose_name = 'Portafolio'
 
