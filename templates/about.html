@@ -31,8 +31,8 @@
         
 <div class="bg-gray-100">
         <div class="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
-            <div class="col-span-4 sm:col-span-3">
-                <div class="bg-white shadow rounded-lg p-6">
+            <div class="col-span-6 sm:col-span-3">
+                <div class="bg-white shadow rounded-lg p-11">
                     <div class="flex flex-col items-center">
                         <img src="{%static 'images/2.png'%}" class="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0">
                         <h1 class="text-xl font-bold"></h1>
@@ -63,24 +63,24 @@
                     </div>
                 </div>
             </div>
-            <div class="col-span-4 sm:col-span-9">
-                <div class="bg-white shadow rounded-lg p-6">
+            <div class="col-span-6 sm:col-span-9">
+                <div class="bg-white shadow rounded-lg p-8">
                     <h2 class="text-xl font-bold mb-4">{% if request.LANGUAGE_CODE == 'es' %}🔧 HABILIDADES TÉCNICAS{% else %}🔧 TECHNICAL SKILLS{% endif %}</h2>
                     <p class="text-gray-700">
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Lenguajes de programación: Python{% else %}Programming languages: Python{% endif %}</li>
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Frameworks: Django, FastAPI{% else %}Frameworks: Django, FastAPI{% endif %}</li>
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Bases de datos: PostgreSQL, MySQL{% else %}Database: PostgreSQL, MySQL{% endif %}</li>
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Herramientas y plataformas: Git, GitHub, Docker, REST APIs{% else %}Tools and Platforms: Git, GitHub, Docker, REST APIs{% endif %}</li>
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Conocimientos: Sistemas eléctricos, reparación de equipos electrónicos, diagnóstico y automatización industrial{% else %}Domain Knowledge: Electrical Systems, Electronic Repair and Diagnostics, Industrial Automation{% endif %}</li>
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Certificaciones: Desarrollo asistido por IA (Brais Moure - 2026){% else %}Certifications: AI-Aided Development (Brais Moure - 2026){% endif %}</li>
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Desarrollo web: Backend, REST APIs, integración de servicios{% else %}Web development: Backend, REST APIs, service integration{% endif %}</li>
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Ingeniería industrial: análisis de procesos, mejora continua, gestión de proyectos{% else %}Industrial engineering: process analysis, continuous improvement, project management{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Lenguajes de programación: Python.{% else %}Programming languages: Python.{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Frameworks: Django, FastAPI.{% else %}Frameworks: Django, FastAPI.{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Bases de datos: PostgreSQL, MySQL.{% else %}Database: PostgreSQL, MySQL.{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Herramientas y plataformas: Git, GitHub, Docker, REST APIs.{% else %}Tools and Platforms: Git, GitHub, Docker, REST APIs.{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Conocimientos: Sistemas eléctricos, reparación de equipos electrónicos, diagnóstico y automatización industrial.{% else %}Domain Knowledge: Electrical Systems, Electronic Repair and Diagnostics, Industrial Automation.{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Certificaciones: Desarrollo asistido por IA (Brais Moure - 2026).{% else %}Certifications: AI-Aided Development (Brais Moure - 2026).{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Desarrollo web: Backend, REST APIs, integración de servicios.{% else %}Web development: Backend, REST APIs, service integration.{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Ingeniería industrial: análisis de procesos, mejora continua, gestión de proyectos.{% else %}Industrial engineering: process analysis, continuous improvement, project management.{% endif %}</li>
                   
                     </p>
 
 
                     <h2 class="text-xl font-bold mt-6 mb-4">{% if request.LANGUAGE_CODE == 'es' %}EXPERIENCIA{% else %}EXPERIENCE{% endif %}</h2>
-                    <div class="mb-6">
+                    <div class="mb-9">
                         <div class="flex justify-between flex-wrap gap-2 w-full">
                             <span class="text-gray-700 font-bold">{% if request.LANGUAGE_CODE == 'es' %}Desarrollador Backend - Freelance 2025-Presente{% else %}Backend Developer - Freelance 2025-Present{% endif %}</span>
                         </div>
@@ -101,13 +101,8 @@
                             <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Desarrolló protocolos de diagnóstico sistemáticos que redujeron el tiempo promedio de reparación.{% else %}He developed systematic diagnostic protocols that reduced the average repair time.{% endif %}</li>
                             </p>
                     </div>
-                    <div class="mb-6">
                         <div class="flex justify-between flex-wrap gap-2 w-full">
-                            <p>
-                            
-                            </p> 
                         </div>
-                        <p class="mt-2">
                         </p>
                     </div>
                 </div>
