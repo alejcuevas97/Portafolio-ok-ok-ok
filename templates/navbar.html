@@ -83,6 +83,10 @@
                         <i class="fas fa-file-alt mr-2"></i>
                         {% if request.LANGUAGE_CODE == 'es' %}Proyectos{% else %}Projects{% endif %}
                     </a>
+                    <a href="{% url 'certifications' %}" class="nav-link text-gray-700 hover:text-blue-600 px-4 py-2 flex items-center rounded-lg hover:bg-blue-50 transition-colors duration-200">
+                        <i class="fas fa-certificate mr-2"></i>
+                        {% if request.LANGUAGE_CODE == 'es' %}Certificaciones{% else %}Certifications{% endif %}
+                    </a>
                     <a href="{% url 'contact' %}" class="nav-link text-gray-700 hover:text-blue-600 px-4 py-2 flex items-center rounded-lg hover:bg-blue-50 transition-colors duration-200">
                         <i class="fas fa-envelope  mr-2"></i>
                         {% if request.LANGUAGE_CODE == 'es' %}Contacto{% else %}Contact{% endif %}
@@ -130,6 +134,10 @@
                 <a href="{% url 'projects' %}" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 flex items-center transition-colors duration-200">
                     <i class="fas fa-file-alt text-gray-700 mr-3 w-5 text-center"></i>
                     {% if request.LANGUAGE_CODE == 'es' %}Proyectos{% else %}Projects{% endif %}
+                </a>
+                <a href="{% url 'certifications' %}" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 flex items-center transition-colors duration-200">
+                    <i class="fas fa-certificate text-gray-700 mr-3 w-5 text-center"></i>
+                    {% if request.LANGUAGE_CODE == 'es' %}Certificaciones{% else %}Certifications{% endif %}
                 </a>
                 <a href="{%url 'contact'%}" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 flex items-center transition-colors duration-200">
                     <i class="fas fa-envelope text-gray-700 mr-3 w-5 text-center"></i>

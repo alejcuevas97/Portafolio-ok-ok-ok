@@ -1,10 +1,9 @@
-# 🎯 Portafolio Personal
+﻿# 🎯 Portafolio Personal
 
-Portafolio personal desarrollado con Django para mostrar habilidades, experiencia y proyectos como Ingeniero Industrial y Desarrollador Backend. Incluye secciones de información personal, habilidades técnicas, currículum y contacto. Cuenta con una arquitectura basada en los principios SOLID para mayor mantenibilidad.
+Portafolio personal desarrollado con Django para mostrar habilidades, experiencia y proyectos como Ingeniero Industrial y Desarrollador Backend. Incluye secciones de información personal, habilidades técnicas, currículum, contacto y certificaciones. Está construido con una arquitectura basada en principios SOLID para mantener el código limpio y escalable.
 
 ## Enlace de Portfolio
 https://portafolio-propio.onrender.com
-
 
 ## 🚀 Tecnologías Utilizadas
 
@@ -13,31 +12,40 @@ https://portafolio-propio.onrender.com
 - **Autenticación**: Django REST Framework Simple JWT
 - **Frontend**: HTML, CSS, Tailwind CSS 4.2.4
 - **Base de Datos**: PostgreSQL o SQLite
+- **Almacenamiento de medios**: Cloudinary
 - **Despliegue**: Gunicorn, WhiteNoise
-- **Otros**: Django Environ, Pillow, Psycopg2
+- **Otros**: Django Environ, Pillow, django-browser-reload
 
 ## ✨ Características
 
 ### Páginas Web
 - **Inicio**: Página de bienvenida con diseño responsivo
 - **Perfil**: Información personal del desarrollador
-- **Acerca de Mí**: Formación académica y habilidades técnicas
+- **Acerca de mí**: Formación académica y habilidades técnicas
 - **Currículum**: Descripción profesional detallada
 - **Contacto**: Información de contacto
-- **Proyectos**: Lista de proyectos realizados con paginación
+- **Proyectos**: Lista de proyectos con paginación
+- **Certificaciones**: Sección dinámica para mostrar certificaciones gestionadas desde el backend
 
-### Modelo de Datos
-- **Proyecto**: Modelo para gestionar proyectos con campos como título, descripción, imagen y enlace
+### Gestión de contenido
+- **Modelo `Project`**: Administra proyectos con título, descripción, imagen Cloudinary y enlace
+- **Modelo `Certification`**: Administra certificaciones con título, emisor, fecha, descripción y enlace de credencial
+- **Admin personalizado**: Panel de administración disponible en `/config/`
+
+### Internacionalización
+- Soporte para **Español** e **Inglés**
+- Cambio de idioma en el sitio por botón de navegación
 
 ### Arquitectura
-- Implementación de los principios SOLID (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion)
+- Implementación de principios SOLID (Single Responsibility, Open/Closed, Dependency Inversion, etc.)
 - Servicios separados para lógica de negocio
-- Vistas genéricas extensibles
-- Validadores personalizados
+- Vistas basadas en clases reutilizables
+- Serializers preparados para API REST
+- Soporte de recarga en caliente durante desarrollo con `django-browser-reload`
 
 ### API REST (Preparada)
-- Serializers para operaciones CRUD en proyectos
-- Estructura preparada para endpoints de API
+- Serializers creados para operaciones de lista y detalle de proyectos
+- El proyecto está preparado para exponer endpoints adicionales de API en el futuro
 
 ## 🔧 Instalación
 
@@ -73,25 +81,32 @@ https://portafolio-propio.onrender.com
 
 5. **Configura variables de entorno (.env):**
    Crea un archivo `.env` en la raíz del proyecto con:
-   ```
+   ```env
    DEBUG=True
    SECRET_KEY=tu_clave_secreta_aqui
-   DATABASE_URL=sqlite:///db.sqlite3  # o tu URL de PostgreSQL
+   DATABASE_URL=sqlite:///db.sqlite3
    ALLOWED_HOSTS=localhost,127.0.0.1
+   CLOUDINARY_CLOUD_NAME=tu_cloud_name
+   CLOUDINARY_API_KEY=tu_api_key
+   CLOUDINARY_API_SECRET=tu_api_secret
    ```
 
 6. **Ejecuta migraciones:**
    ```bash
-   python manage.py makemigrations porfolio
    python manage.py migrate
    ```
 
-7. **Recopila archivos estáticos:**
+7. **Crea superusuario (opcional):**
+   ```bash
+   python manage.py createsuperuser
+   ```
+
+8. **Recopila archivos estáticos:**
    ```bash
    python manage.py collectstatic --noinput
    ```
 
-8. **Ejecuta el servidor:**
+9. **Ejecuta el servidor:**
    ```bash
    python manage.py runserver
    ```
@@ -101,16 +116,21 @@ https://portafolio-propio.onrender.com
 
 ```
 Portafolio/
-├── Portafolio/          # Configuración principal
-│   ├── settings.py      # Configuraciones de Django
-│   ├── urls.py          # URLs principales
-│   ├── views.py         # Vistas de páginas
+├── Portafolio/          # Configuración principal de Django
+│   ├── settings.py      # Configuraciones del proyecto
+│   ├── urls.py          # Rutas principales
+│   ├── views.py         # Vistas de páginas públicas
 │   └── serializers.py   # Serializers para API
 ├── porfolio/            # App de portafolio
-│   ├── models.py        # Modelos de datos
-│   ├── views.py         # Vistas de proyectos
-│   ├── forms.py         # Formularios
+│   ├── models.py        # Modelo Project y validaciones
+│   ├── views.py         # Lógica de proyectos y vistas de lista
+│   ├── forms.py         # Formularios para el frontend
 │   └── services.py      # Servicios de negocio
+├── certificado/         # App de certificaciones
+│   ├── models.py        # Modelo Certification
+│   ├── views.py         # Vista de lista de certificaciones
+│   ├── admin.py         # Registro en admin
+│   └── urls.py          # Ruta de certificaciones
 ├── templates/           # Plantillas HTML
 ├── static/              # Archivos estáticos
 ├── media/               # Archivos multimedia
@@ -119,9 +139,12 @@ Portafolio/
 
 ## 🚀 Uso
 
-- Navega por las diferentes secciones usando la barra de navegación
-- En la sección de proyectos, puedes ver la lista de proyectos realizados
-- El panel de administración está disponible en `/config/` (requiere credenciales de superusuario)
+- Abrir la página principal en `/`
+- Ver proyectos en `/proyectos/`
+- Ver certificaciones en `/certificaciones/`
+- Cambiar idioma con los botones `ES`/`EN` en la navegación
+- Acceder al panel administrativo en `/config/`
+- Agregar proyectos y certificaciones desde el backend admin
 
 ## 🤝 Contribución
 
@@ -141,5 +164,4 @@ Este proyecto está bajo la Licencia ISC.
 
 - **Autor**: Alejandro Cuevas Gonzalez
 - **GitHub**: [alejcuevas97](https://github.com/alejcuevas97)
-- **Repositorio**: [PORTAFOLIO_PROPIO](https://github.com/alejcuevas97/PORTAFOLIO_PROPIO)</content>
-<parameter name="filePath">d:\Almacen\CURSOS\backend con django\Portafolio\README.md
+- **Repositorio**: [PORTAFOLIO_PROPIO](https://github.com/alejcuevas97/PORTAFOLIO_PROPIO)

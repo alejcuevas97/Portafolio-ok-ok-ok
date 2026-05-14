@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% if request.LANGUAGE_CODE == 'es' %}Certificaciones{% else %}Certifications{% endif %}{% endblock title %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-100 py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto bg-white shadow rounded-lg overflow-hidden">
+        <div class="bg-blue-600 px-6 py-8 sm:px-10">
+            <h1 class="text-3xl font-semibold text-white">{% if request.LANGUAGE_CODE == 'es' %}Certificaciones{% else %}Certifications{% endif %}</h1>
+            <p class="mt-2 text-blue-100 max-w-2xl">{% if request.LANGUAGE_CODE == 'es' %}Aquí se muestran las certificaciones ingresadas desde el backend.{% else %}These are the certifications entered from the backend.{% endif %}</p>
+        </div>
+        <div class="p-6 sm:p-8">
+            {% if certifications %}
+                <div class="grid gap-6">
+                    {% for item in certifications %}
+                        <article class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-200">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                                <div>
+                                    <h2 class="text-2xl font-semibold text-gray-900">{{ item.title }}</h2>
+                                    <p class="text-sm text-gray-500">{{ item.issuer }}</p>
+                                </div>
+                                <p class="text-sm text-blue-600 font-medium">{{ item.issued_date|date:'F Y' }}</p>
+                            </div>
+                            {% if item.description %}
+                                <p class="mt-4 text-gray-700">{{ item.description }}</p>
+                            {% endif %}
+                            {% if item.credential_url %}
+                                <div class="mt-4">
+                                    <a href="{{ item.credential_url }}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">{% if request.LANGUAGE_CODE == 'es' %}Ver credencial{% else %}View credential{% endif %}</a>
+                                </div>
+                            {% endif %}
+                        </article>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="rounded-xl border border-dashed border-gray-300 bg-gray-50 p-8 text-center">
+                    <p class="text-gray-600 text-lg">{% if request.LANGUAGE_CODE == 'es' %}Aún no hay certificaciones publicadas. Ingresa datos desde el backend en el panel de administración.{% else %}No certifications have been published yet. Add them from the backend admin panel.{% endif %}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
