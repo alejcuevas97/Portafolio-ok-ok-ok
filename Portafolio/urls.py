@@ -20,6 +20,7 @@ urlpatterns = [
     
     # MEJORADO: Usar ProjectListView en lugar de función Proyectos
     path('proyectos/', ProjectListView.as_view(), name='projects'),
+    path('certificaciones/', include('certificado.urls')),
 ]
 
 from django.conf import settings
