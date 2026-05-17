@@ -18,7 +18,7 @@
           {% if request.LANGUAGE_CODE == 'es' %}Hola, soy Alejandro Cuevas González{% else %}Hello, I'm Alejandro Cuevas González{% endif %}
         </h1>
         <p class="text-lg sm:text-xl md:text-2xl font-medium text-gray-600">
-          {% if request.LANGUAGE_CODE == 'es' %}Ingeniero Industrial, técnico en reparación de equipos eléctricos y electrónicos, desarrollador Backend freelance.{% else %}Industrial Engineer, Electrical and Electronic Equipment Repair Technician, Freelance Backend Programmer.{% endif %}
+          {% if request.LANGUAGE_CODE == 'es' %}Ingeniero Industrial, Técnico Reparador de Equipos Eléctricos y Electrónicos, Desarrollador Backend Freelance.{% else %}Industrial Engineer, Electrical and Electronic Equipment Repair Technician, Freelance Backend Programmer.{% endif %}
         </p> 
       </div>
       
@@ -28,15 +28,9 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="px-6 sm:px-10 md:px-16 py-5 text-center mt-auto">
-      <p class="text-black">
-        © 2025 Alejandro Cuevas González | {% if request.LANGUAGE_CODE == 'es' %}Desarrollador Backend{% else %}Backend Developer{% endif %} | Designed by @alejcuevas97
-      </p>
-    </footer>
-</body>
+    </body>
 
 </html>
 
-
+{% include 'footer.html' %}
 {% endblock content %}

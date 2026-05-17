@@ -8,7 +8,7 @@
     <div class="max-w-5xl mx-auto bg-white shadow rounded-lg overflow-hidden">
         <div class="bg-blue-600 px-6 py-8 sm:px-10">
             <h1 class="text-3xl font-semibold text-white">{% if request.LANGUAGE_CODE == 'es' %}Certificaciones{% else %}Certifications{% endif %}</h1>
-            <p class="mt-2 text-blue-100 max-w-2xl">{% if request.LANGUAGE_CODE == 'es' %}Aquí se muestran las certificaciones ingresadas desde el backend.{% else %}These are the certifications entered from the backend.{% endif %}</p>
+            <p class="mt-2 text-blue-100 max-w-2xl">{% if request.LANGUAGE_CODE == 'es' %}Aquí se muestran las certificaciones obtenidas.{% else %}The certifications obtained are shown here.{% endif %}</p>
         </div>
         <div class="p-6 sm:p-8">
             {% if certifications %}
@@ -41,4 +41,6 @@
         </div>
     </div>
 </div>
+
+{% include 'footer.html' %}
 {% endblock content %}

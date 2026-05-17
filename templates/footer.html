@@ -1,0 +1,52 @@
+<!-- Footer Component with Smart Hide/Show on Scroll -->
+<style>
+  .footer-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f3f4f6;
+    border-top: 1px solid #e5e7eb;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+    z-index: 40;
+  }
+
+  .footer-container.hide {
+    transform: translateY(100%);
+  }
+</style>
+
+<footer id="footer-element" class="footer-container px-6 sm:px-10 md:px-16 py-6 text-center">
+  <p class="text-gray-700 text-sm">
+    © 2025 Alejandro Cuevas González | {% if request.LANGUAGE_CODE == 'es' %}Desarrollador Backend{% else %}Backend Developer{% endif %} | Designed by @alejcuevas97
+  </p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const footer = document.getElementById('footer-element');
+    let lastScrollTop = 0;
+    let isScrolling = false;
+
+    window.addEventListener('scroll', function() {
+      if (isScrolling) return;
+      
+      isScrolling = true;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Si estamos scrolleando hacia abajo, oculta el footer
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        footer.classList.add('hide');
+      } 
+      // Si estamos scrolleando hacia arriba, muestra el footer
+      else {
+        footer.classList.remove('hide');
+      }
+      
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      
+      isScrolling = false;
+    });
+  });
+</script>

@@ -36,6 +36,17 @@
                     <div class="flex flex-col items-center">
                         <img src="{%static 'images/2.png'%}" class="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0">
                         <h1 class="text-xl font-bold"></h1>
+                            
+                        <div class="mt-6 flex flex-wrap gap-4 justify-center">
+                            <a href="{%url 'resume'%}" class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded">{% if request.LANGUAGE_CODE == 'es' %}Resumen{% else %}Summary{% endif %}</a>
+                        </div>
+                    </div>
+                    <hr class="my-6 border-t border-gray-300">
+                    <div class="flex flex-col">
+                        <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">{% if request.LANGUAGE_CODE == 'es' %}Antecedentes académicos{% else %}Academic background{% endif %}</span>
+                        <ul>
+                        <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}• Ingeniería Industrial - Universidad Central "Marta Abreu" de Las Villas / Universidad José Martí Pérez, Sancti Spíritus.{% else %}• Industrial Engineering - Central University "Marta Abreu" of Las Villas / José Martí Pérez University, Sancti Spíritus.{% endif %}
+                        </ul>
                             <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">{% if request.LANGUAGE_CODE == 'es' %}Logros{% else %}Achievements{% endif %}</span>
                             <ul>
                                 <li class="mb-2 flex items-center gap-2">
@@ -49,18 +60,7 @@
                                 <span>YOLO</span>
                                 </li>
                             </ul>
-                        <div class="mt-6 flex flex-wrap gap-4 justify-center">
-                            <a href="{%url 'resume'%}" class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded">{% if request.LANGUAGE_CODE == 'es' %}Resumen{% else %}Summary{% endif %}</a>
                         </div>
-                    </div>
-                    <hr class="my-6 border-t border-gray-300">
-                    <div class="flex flex-col">
-                        <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">{% if request.LANGUAGE_CODE == 'es' %}Antecedentes académicos{% else %}Academic background{% endif %}</span>
-                        <ul>
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}• Ingeniería Industrial - Universidad Central "Marta Abreu" de Las Villas / Universidad José Martí Pérez, Sancti Spíritus.{% else %}• Industrial Engineering - Central University "Marta Abreu" of Las Villas / José Martí Pérez University, Sancti Spíritus.{% endif %}
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}• Certificación en Plataforma de Desarrollo Asistido por IA: Brais Moure, año 2026{% else %}• Certification in AI-Assisted Development Platform: Brais Moure, year 2026{% endif %}
-                        </ul>
-                    </div>
                 </div>
             </div>
             <div class="col-span-6 sm:col-span-9">
@@ -70,9 +70,9 @@
                             <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Lenguajes de programación: Python.{% else %}Programming languages: Python.{% endif %}</li>
                             <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Frameworks: Django, FastAPI.{% else %}Frameworks: Django, FastAPI.{% endif %}</li>
                             <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Bases de datos: PostgreSQL, MySQL.{% else %}Database: PostgreSQL, MySQL.{% endif %}</li>
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Herramientas y plataformas: Git, GitHub, Docker, REST APIs.{% else %}Tools and Platforms: Git, GitHub, Docker, REST APIs.{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Herramientas y plataformas: Git, GitHub, Docker, REST APIs, Postman.{% else %}Tools and Platforms: Git, GitHub, Docker, REST APIs, Postman.{% endif %}</li>
                             <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Conocimientos: Sistemas eléctricos, reparación de equipos electrónicos, diagnóstico y automatización industrial.{% else %}Domain Knowledge: Electrical Systems, Electronic Repair and Diagnostics, Industrial Automation.{% endif %}</li>
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Certificaciones: Desarrollo asistido por IA (Brais Moure - 2026).{% else %}Certifications: AI-Aided Development (Brais Moure - 2026).{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Certificaciones: Desarrollo asistido por IA (Brais Moure - 2026), "Master en Diseño Web con Inteligencia Artificial", "SQL: Creación de Bases de Datos (De cero a profesional)", "Desarrollo Full Stack con Python y Django: Construye una Aplicación Web Moderna".{% else %}Certifications: AI-Aided Development (Brais Moure - 2026), "Master in Web Design with Artificial Intelligence", "SQL: Database Creation (From Zero to Professional)", "Python Django Full Stack Development: Build Modern Web App".{% endif %}</li>
                             <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Desarrollo web: Backend, REST APIs, integración de servicios.{% else %}Web development: Backend, REST APIs, service integration.{% endif %}</li>
                             <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Ingeniería industrial: análisis de procesos, mejora continua, gestión de proyectos.{% else %}Industrial engineering: process analysis, continuous improvement, project management.{% endif %}</li>
                   
@@ -96,10 +96,13 @@
                             <span class="text-gray-700 font-bold">{% if request.LANGUAGE_CODE == 'es' %}Técnico en electricidad y electrónica - Privado 2015-Presente{% else %}Electrical and Electronic Technician - Private 2015-Present{% endif %}</span>
                             </div>
                         <p class="mt-2">
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Diagnostica y repara equipos eléctricos y electrónicos para clientes residenciales e industriales durante más de 10 años.{% else %}He diagnosed and repaired electrical and electronic equipment for residential and industrial customers for over 10 years.{% endif %}</li>
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Especializado en equipos: televisores LCD y CRT; teléfonos; convertidores de potencia; computadoras; etc.{% else %}Specializing in equipment: LCD and CRT TVs; Telephones; Power Converters; Computers; etc...{% endif %}</li>
-                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Desarrolló protocolos de diagnóstico sistemáticos que redujeron el tiempo promedio de reparación.{% else %}He developed systematic diagnostic protocols that reduced the average repair time.{% endif %}</li>
-                            </p>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Más de 10 años de experiencia resolviendo problemas técnicos complejos y optimizando sistemas.{% else %}Over 10 years of experience solving complex technical problems and optimizing systems.{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Especialización en diagnóstico y reparación de equipos electrónicos y eléctricos (televisores LCD/TRC, teléfonos, convertidores de potencia, computadoras).{% else %}Specialized in diagnosing and repairing electronic and electrical equipment (LCD/CRT televisions, phones, power converters, computers).{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Desarrollo de protocolos sistemáticos de diagnóstico, reduciendo significativamente el tiempo promedio de resolución de incidencias.{% else %}Developed systematic diagnostic protocols, significantly reducing average incident resolution time.{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Amplia práctica en análisis de fallos, identificación de cuellos de botella y aplicación de soluciones escalables.{% else %}Extensive practice in failure analysis, bottleneck identification, and implementation of scalable solutions.{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Experiencia trabajando con clientes residenciales e industriales, adaptando soluciones a diferentes entornos y necesidades.{% else %}Experience working with both residential and industrial clients, adapting solutions to diverse environments and requirements.{% endif %}</li>
+                            <li class="mb-2">{% if request.LANGUAGE_CODE == 'es' %}Mentalidad orientada a la eficiencia y la calidad, con enfoque en la documentación clara de procesos y resultados.{% else %}Efficiency- and quality-driven mindset, with a strong focus on clear documentation of processes and outcomes.{% endif %}</li>
+                        </p>
                     </div>
                         <div class="flex justify-between flex-wrap gap-2 w-full">
                         </div>
@@ -111,4 +114,5 @@
     </div>
 </div>
 
+{% include 'footer.html' %}
 {% endblock content %}
